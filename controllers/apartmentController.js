@@ -60,10 +60,10 @@ const createApartment = async(req, res) => {
 const deleteApartment = async(req, res) => {
   const id = req.params.id;
   const apt = await Apartment.findById(id);
-
+  
   if(apt.userId === req.user.uid){
     try{
-      await apt.delete(req.params.id)
+      await apt.delete()
       res.status(200).json({message: "Successfully deleted"})
     }catch(err){
       res.status(500).json(err)
