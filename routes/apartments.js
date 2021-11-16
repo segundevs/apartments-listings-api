@@ -11,12 +11,12 @@ router.get('/:id', apartmentController.getApartmentById)
 router.use(middleware.decodeToken)
 
 //Post an apartment
-router.post('/',  apartmentController.createApartment)
+router.post('/',  apartmentController.createApartment);
 
 //Delete an apartment
 router.delete('/:id', apartmentController.deleteApartment)
 
 //Update an apartment
-router.put('/:id', apartmentController.updateApartment)
+router.patch('/:id', apartmentController.updateApartment)
 
 module.exports = router;
