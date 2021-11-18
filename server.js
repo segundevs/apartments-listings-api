@@ -1,8 +1,8 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const apartmentRoute = require('./routes/apartments');
+const express = require("express");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const apartmentRoute = require("./routes/apartments");
 
 const app = express();
 
@@ -12,13 +12,14 @@ app.use(cors());
 
 const port = process.env.PORT || 8080;
 
-mongoose.connect(process.env.MONGO_URL)
-.then(console.log('MongoDb connected'))
-.catch(err => console.log(err));
-
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(console.log("MongoDb connected"))
+  .catch((err) => console.log(err));
 
 app.listen(port, (req, res) => {
-  console.log('listening on port 8080')
-})
+  res.send("Welcome to the listing apartments api");
+  console.log("listening on port 8080");
+});
 
-app.use('/api/apartments', apartmentRoute);
+app.use("/api/apartments", apartmentRoute);

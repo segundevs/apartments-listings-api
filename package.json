@@ -1,7 +1,7 @@
 {
   "name": "apartments-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "An api designed with nodejs, express and mongoDB for an apartment listing website",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js"
