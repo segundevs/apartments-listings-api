@@ -18,7 +18,6 @@ mongoose
   .catch((err) => console.log(err));
 
 app.listen(port, (req, res) => {
-  res.send("Welcome to the listing apartments api");
   console.log("listening on port 8080");
 });
 
