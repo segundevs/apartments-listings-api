@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const apartmentRoute = require("./routes/apartments");
+const mailRoute = require("./routes/nodemailer");
 
 const app = express();
 
@@ -22,3 +23,4 @@ app.listen(port, (req, res) => {
 });
 
 app.use("/api/apartments", apartmentRoute);
+app.use("/", mailRoute);
