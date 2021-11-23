@@ -16,7 +16,7 @@ const sendMail = (req, res) => {
     from: req.body.mail,
     to: req.body.email,
     subject: req.body.subject,
-    html: `From ${req.body.username} ${req.body.mail} <br /> ${req.body.message}`,
+    html: `${req.body.username} from Apartments <br /> ${req.body.mail} <br /> ${req.body.message}`,
   };
 
   transporter.sendMail(mailOptions, (err, data) => {
