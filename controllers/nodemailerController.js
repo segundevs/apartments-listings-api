@@ -13,19 +13,17 @@ let transporter = nodemailer.createTransport({
 
 const sendMail = (req, res) => {
   let mailOptions = {
-    from: req.body.mail,
-    to: req.body.email,
+    from: req.body.senderEmail,
+    to: req.body.receiverEmail,
     subject: req.body.subject,
-    html: `${req.body.username} from Apartments <br /> ${req.body.mail} <br /> ${req.body.message}`,
+    html: `${req.body.username} from Apartments <br /> ${req.body.senderEmail} <br /> <br /> ${req.body.message}`,
   };
 
   transporter.sendMail(mailOptions, (err, data) => {
     if (err) {
       res.status(500).json(err.message);
-      console.log(err);
     } else {
       res.status(200).json(data);
-      console.log(data);
     }
   });
 };
