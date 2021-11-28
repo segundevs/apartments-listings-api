@@ -23,4 +23,4 @@ app.listen(port, (req, res) => {
 });
 
 app.use("/api/apartments", apartmentRoute);
-app.use("/", mailRoute);
+app.use("/api/apartments", mailRoute);
