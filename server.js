@@ -11,6 +11,21 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 
+const origin = ["https://apartmentshub.netlify.app/", "http://localhost:3000"];
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", origin);
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  next();
+});
+
 const port = process.env.PORT || 8080;
 
 mongoose
@@ -22,5 +37,5 @@ app.listen(port, (req, res) => {
   console.log("listening on port 8080");
 });
 
-app.use("/api/apartments", apartmentRoute);
 app.use("/api/apartments", mailRoute);
+app.use("/api/apartments", apartmentRoute);

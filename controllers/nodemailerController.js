@@ -22,8 +22,10 @@ const sendMail = (req, res) => {
   transporter.sendMail(mailOptions, (err, data) => {
     if (err) {
       res.status(500).json(err.message);
+      console.log(err.message);
     } else {
       res.status(200).json(data);
+      console.log(data);
     }
   });
 };
