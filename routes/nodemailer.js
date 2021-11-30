@@ -9,7 +9,7 @@ router.post(
   app.use((req, res, next) => {
     res.setHeader(
       "Access-Control-Allow-Origin",
-      "https://apartmentshub.netlify.app/"
+      "https://apartmentshub.netlify.app"
     );
     res.setHeader(
       "Access-Control-Allow-Methods",
