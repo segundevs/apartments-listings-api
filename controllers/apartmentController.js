@@ -18,9 +18,13 @@ const getAllApartments = async (req, res) => {
       getApartments = await Apartment.find(query).limit(limitRecords);
     }
     if (q) {
-      getApartments = await Apartment.find(query);
+      getApartments = await Apartment.find(query).sort({
+        updatedAt: 1,
+      });
     } else {
-      getApartments = await Apartment.find();
+      getApartments = await Apartment.find().sort({
+        updatedAt: 1,
+      });
     }
     res.status(200).json(getApartments);
     console.log(query);
