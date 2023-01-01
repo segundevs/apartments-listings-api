@@ -11,8 +11,7 @@ body {
 
 .container {
   text-align: center;
-  width: 80vw;
-  height: 50vh;
+  width: 80%;
   margin-inline: auto;
-  margin-top: 20vh;
+  margin-top: 45vh;
 }

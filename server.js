@@ -23,7 +23,7 @@ app.listen(port, (req, res) => {
   console.log("listening on port 8080");
 });
 
-app.use("/", express.static("public"));
+app.use("/", express.static(path.join(__dirname, "/public")));
 app.use("/", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "index.html"));
 });
